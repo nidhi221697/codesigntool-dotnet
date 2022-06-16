@@ -42,9 +42,7 @@ pipeline {
 
         stage ('Sign Dotnet Artifact') {
             steps {
-                sh 'docker run -i --rm --dns 8.8.8.8 --network host --volume ${WORKSPACE}/packages:/codesign/examples --volume ${WORKSPACE}/artifacts:/codesign/output 
-                    -e USERNAME=${USERNAME} -e PASSWORD=${PASSWORD} -e CREDENTIAL_ID=${CREDENTIAL_ID} -e TOTP_SECRET=${TOTP_SECRET} -e ENVIRONMENT_NAME=${ENVIRONMENT_NAME} 
-                    ghcr.io/bayrakmustafa/codesigner:latest sign -input_file_path=/codesign/examples/HelloWorld.dll -output_dir_path=/codesign/output'
+                sh 'docker run -i --rm --dns 8.8.8.8 --network host --volume ${WORKSPACE}/packages:/codesign/examples --volume ${WORKSPACE}/artifacts:/codesign/output -e USERNAME=${USERNAME} -e PASSWORD=${PASSWORD} -e CREDENTIAL_ID=${CREDENTIAL_ID} -e TOTP_SECRET=${TOTP_SECRET} -e ENVIRONMENT_NAME=${ENVIRONMENT_NAME} ghcr.io/bayrakmustafa/codesigner:latest sign -input_file_path=/codesign/examples/HelloWorld.dll -output_dir_path=/codesign/output'
             }
             post {
                 always {
