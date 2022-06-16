@@ -22,8 +22,8 @@ pipeline {
     stages {
         stage('Create artifacts directory') {
             steps {
-                sh 'mkdir ${WORKSPACE}/artifacts'
-                sh 'mkdir ${WORKSPACE}/packages'
+                sh 'mkdir -p ${WORKSPACE}/artifacts'
+                sh 'mkdir -p ${WORKSPACE}/packages'
             }
         }
 
