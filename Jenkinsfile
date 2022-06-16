@@ -13,7 +13,7 @@ pipeline {
     environment {
         USERNAME      = credentials('es-username')
         PASSWORD      = credentials('es-password')
-        CREDENTIAL_ID = credentials('es-credential-id')
+        CREDENTIAL_ID = credentials('es-crendential-id')
         TOTP_SECRET   = credentials('es-totp-secret')
 
         ENVIRONMENT_NAME = 'TEST' //PROD
