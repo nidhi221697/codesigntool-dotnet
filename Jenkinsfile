@@ -11,8 +11,8 @@ pipeline {
     }
 
     environment {
-        USERNAME      = credentials('es-username')
-        PASSWORD      = credentials('es-password')
+        USERNAME      = credentials('esigner_demo')
+        PASSWORD      = credentials('Admin@123')
         CREDENTIAL_ID = credentials('es-crendential-id')
         TOTP_SECRET   = credentials('es-totp-secret')
 
